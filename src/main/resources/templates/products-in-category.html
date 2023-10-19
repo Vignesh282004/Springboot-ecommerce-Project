@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+	<title>Ultras - Clothing Store eCommerce Store HTML Website Template</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="author" content="">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/normalize.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/icomoon/icomoon.css}">
+	<link rel="stylesheet" type="text/css" media="all"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/vendor.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<!-- script
+    ================================================== -->
+	<script th:src="@{/js/modernizr.js}"></script>
+</head>
+
+<body>
+
+	<div class="preloader-wrapper">
+		<div class="preloader">
+		</div>
+	</div>
+
+	<div class="search-popup">
+		<div class="search-popup-container">
+
+			<form role="search" method="get" class="search-form" action="">
+				<input type="search" id="search-form" class="search-field" placeholder="Type and press enter" value=""
+					name="s" />
+				<button type="submit" class="search-submit"><a href="#"><i class="icon icon-search"></i></a></button>
+			</form>
+
+			<h5 class="cat-list-title">Browse Categories</h5>
+
+			<ul class="cat-list">
+				<li class="cat-list-item">
+					<a href="shop.html" title="Men Jackets">Men Jackets</a>
+				</li>
+				<li class="cat-list-item">
+					<a href="shop.html" title="Fashion">Fashion</a>
+				</li>
+				<li class="cat-list-item">
+					<a href="shop.html" title="Casual Wears">Casual Wears</a>
+				</li>
+				<li class="cat-list-item">
+					<a href="shop.html" title="Women">Women</a>
+				</li>
+				<li class="cat-list-item">
+					<a href="shop.html" title="Trending">Trending</a>
+				</li>
+				<li class="cat-list-item">
+					<a href="shop.html" title="Hoodie">Hoodie</a>
+				</li>
+				<li class="cat-list-item">
+					<a href="shop.html" title="Kids">Kids</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+
+
+	 
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="page-title">Menu page</h1>
+            <div class="breadcrumbs">
+              <span class="item">
+                <a th:href="@{/index}">Go To Shop Main Page</a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+       <div class="shopify-grid padding-large">
+      <div class="container">
+        <div class="row">
+          <section id="selling-products" class="col-md-9 product-store">
+            <div class="container">
+              <div class="tab-content">
+                <div id="all" data-tab-content class="active">
+                  <div class="row d-flex flex-wrap">
+                    <div class="product-item col-lg-4 col-md-6 col-sm-6" th:each = "product :${products}">
+                      <div class="image-holder">
+                        <img src="" th:src = "*{'data:image/jpeg;base64,' + {product.image}}" alt="Books" class="product-image">
+                      </div>
+                      <div class="mask-icon">
+                               	
+                                   <a th:href="@{/find-product/{id}(id = ${product.id})}" data-toggle="tooltip"
+                                           data-placement="right"
+                                           title="View">
+                                          <i class="fa fa-eye"></i>
+                                           </a>
+                               <br>
+                                <input type="hidden" th:value="${product.id}" name="id">
+                                <input th:href ="@{/cart}" type="submit" class="cart" value="Add to Cart">
+                            </div>
+                      <div class="product-detail">
+                        <h3 class="product-title">
+                         <h4 th:text ="'Product Name : ' + ${product.name}"></h4>
+                         <h4 th:text = "'Product Price : ' + ${product.costprice}"></h4>
+                         <h4 th:text = "'Product Quantity : ' + ${product.currentQuantity}"></h4>
+                          <h4 th:text = "'Product Decription : ' + ${product.decription}"></h4>
+                          </h3>
+                          <br>
+          </div>
+                    </div>
+                  </div>
+                  </div>
+                  </div>
+                </div>
+                <hr>
+	</section>
+ </div>      
+    </div>
+    </div>
+	<script th:src="@{/js/jquery-1.11.0.min.js}"></script>
+	<script th:src="@{/js/plugins.js}"></script>
+	<script th:src="@{/js/script.js}"></script>
+</body>
+
+</html>
+    

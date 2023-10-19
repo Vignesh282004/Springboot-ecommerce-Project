@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+	<title>Ultras - Clothing Store eCommerce Store HTML Website Template</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="author" content="">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="icomoon/icomoon.css">
+	<link rel="stylesheet" type="text/css" media="all"
+		href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/vendor.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+		rel="stylesheet">
+	<!-- script
+    ================================================== -->
+	<script src="js/modernizr.js"></script>
+</head>
+
+<body>
+
+	<div class="preloader-wrapper">
+		<div class="preloader">
+		</div>
+	</div>
+
+	<div class="search-popup">
+		<div class="search-popup-container">
+
+			<form role="search" method="get" class="search-form" action="">
+				<input type="search" id="search-form" class="search-field" placeholder="Type and press enter" value=""
+					name="s" />
+				<button type="submit" class="search-submit"><a href="#"><i class="icon icon-search"></i></a></button>
+			</form>
+
+			<h5 class="cat-list-title">Browse Categories</h5>
+
+			<ul class="cat-list">
+				<li class="cat-list-item">
+					<a href="shop.html" title="Men Jackets">Men Jackets</a>
+				</li>
+				<li class="cat-list-item">
+					<a href="shop.html" title="Fashion">Fashion</a>
+				</li>
+				<li class="cat-list-item">
+					<a href="shop.html" title="Casual Wears">Casual Wears</a>
+				</li>
+				<li class="cat-list-item">
+					<a href="shop.html" title="Women">Women</a>
+				</li>
+				<li class="cat-list-item">
+					<a href="shop.html" title="Trending">Trending</a>
+				</li>
+				<li class="cat-list-item">
+					<a href="shop.html" title="Hoodie">Hoodie</a>
+				</li>
+				<li class="cat-list-item">
+					<a href="shop.html" title="Kids">Kids</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<header id="header">
+		<div id="header-wrap">
+			<nav class="secondary-nav border-bottom">
+				<div class="container">
+					<div class="row d-flex align-items-center">
+						<div class="col-md-4 header-contact">
+							<p>Let's talk! <strong>+57 178624 35</strong>
+							</p>
+						</div>
+						<div class="col-md-4 shipping-purchase text-center">
+							<p>Free shipping on a purchase value of $200</p>
+						</div>
+						<div class="col-md-4 col-sm-12 user-items">
+							<ul class="d-flex justify-content-end list-unstyled">
+								<li>
+									<a href="" th:href="@{/customerlogin}">
+										<i class="icon icon-user">Login</i>
+									</a>
+								</li>
+								<br>
+								<br>
+								<li>
+									<a href="" th:href="@{/cusregister}">
+										<i class="icon icon-user">Register</i>
+									</a>
+								</li>
+								<br><br>
+								<li>
+									<a href="cart.html" th:href="@{/cart}">
+										<i class="icon icon-shopping-cart">Cart</i>
+									</a>
+								</li>
+								<br>
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<nav class="primary-nav padding-small">
+				<div class="container">
+					<div class="row d-flex align-items-center">
+						<div class="col-lg-2 col-md-2">
+							<div class="main-logo">
+								<a href="index.html">
+									<img src="images/my_logo.png" alt="logo">
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-10 col-md-10">
+								<div class="navbar">
+
+								<div id="main-nav" class="stellarnav d-flex justify-content-end right">
+									<ul class="menu-list">
+
+									
+										<li><a href="" th:href="@{/products}" class="item-anchor" data-effect="Contact">Detials</a>
+										</li>
+
+										<li><a href="" th:href="@{/shop}" class="item-anchor">Shop</a></li>
+
+
+										<li><a href="" th:href="@{/contact}" class="item-anchor" data-effect="Contact">Contact</a>
+										</li>
+
+<li><a href="" th:href="@{/logout}" class="item-anchor" data-effect="Contact">Logout</a>
+										</li>
+									</ul>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+
+	<section id="billboard" class="overflow-hidden">
+
+		<button class="button-prev">
+			<i class="icon icon-chevron-left"></i>
+		</button>
+		<button class="button-next">
+			<i class="icon icon-chevron-right"></i>
+		</button>
+		<div class="swiper main-swiper">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"
+					style="background-image: url('images/baner1.png');background-repeat: no-repeat;background-size: cover;background-position: center;">
+					<div class="banner-content">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-6">
+									<h2 class="banner-title">Casual Collection</h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet,
+										libero ipsum enim pharetra hac.</p>
+									<div class="btn-wrap">
+										<a href="" th:href="@{/shop}"
+											class="btn btn-light btn-light-arrow btn-medium d-flex align-items-center"
+											tabindex="0">Shop it now <i class="icon icon-arrow-io"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+					<div class="swiper-slide"
+					style="background-image: url('images/main_bnr.png');background-repeat: no-repeat;background-size: cover;background-position: center;">
+					<div class="banner-content">
+						<div class="container">
+							<div class="row">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="featured-products" class="product-store padding-large">
+		<div class="container">
+			<div class="section-header d-flex flex-wrap align-items-center justify-content-between">
+				
+			</div>
+			<!-- Products IN the Index page -->
+			<div class="products-box">
+				<div class="container" th:each="category : ${categories}">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="title-all text-center">
+								<h1 th:text="${category.name}"></h1>
+								<p>Our ELectronic Products Are Best In the World ---- Represented By Vicky</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="special-menu text-center">
+								<div class="button-group filter-button-group">
+									<button class="active" data-filter="*">All</button>
+									<button data-filter=".best-seller">Best seller</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row special-list">
+						<!--<div class="col-lg-3 col-md-6 special-grid best-seller" >
+                <div class="products-single fix">
+                    <div class="box-img-hover">
+                        <img src="" alt="Image">
+                        <div class="mask-icon">
+                            <ul>
+                                <li><a href="product-detail.html" data-toggle="tooltip" data-placement="right"
+                                       title="View"><i class="fas fa-eye"></i></a></li>
+                            </ul>
+                            <a class="cart" href="#">Add to Cart</a>
+                        </div>
+                    </div>
+                    <div class="why-text">
+                        <h4 ></h4>
+                        <h5 > </h5>
+                    </div>
+                </div>
+            </div>-->
+						<div class="col-lg-3 col-md-6 special-grid" th:each="product : ${products}"
+							th:if="${product.category.name == category.name} ">
+							<form th:action="@{/add-to-cart}" method="post">
+								<div class="products-single fix">
+									<div class="box-img-hover">
+										<img th:src="@{'data:image/jpeg;base64,' + ${product.image}}" class="img-fluid"
+											alt="Image">
+										<div class="mask-icon">
+
+											<a th:href="@{/find-product/{id}(id = ${product.id})}" data-toggle="tooltip"
+												data-placement="right" title="View">
+												<i class="fa fa-eye"></i>
+											</a>
+											<br>
+											<input type="hidden" th:value="${product.id}" name="id">
+											<input type="submit" class="cart" value="Add to Cart">
+										</div>
+									</div>
+									<div class="why-text">
+										<h4 th:text="${product.name}"></h4>
+										<h5 th:text="'$' + ${product.costprice}"></h5>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		</div>
+	</section>
+
+	<section class="shoppify-section-banner">
+		<div class="container">
+			<div class="product-collection">
+				<div class="left-content collection-item">
+					<div class="products-thumb">
+						<img src="images/Modern Electronics.png" alt="collection item" class="large-image image-rounded">
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6 product-entry">
+						<div class="categories">We Have Best Products</div>
+						<h3 class="item-title">Modern Electronics.</h3>
+						<p>
+							Electronics Store – Shopping for Electronics Made Easy. Shopping for electronics can be a daunting task. With so many options and unknowns, it’s important to make sure you have the right information when choosing the perfect product for your needs. An electronic store can provide customers with both convenience and knowledge when it comes to purchasing the latest technology. Here is why shopping at an electronic store is the way to go.
+							</p>
+						<div class="btn-wrap">
+							<a href="" th:href = "@{/shop}" class="d-flex align-items-center">shop collection <i
+									class="icon icon-arrow-io"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="quotation" class="align-center padding-large">
+		<div class="inner-content">
+			<h2 class="section-title divider">Quote of the day</h2>
+			<blockquote>
+				<p>Technology can be our best friend, and technology can also be the biggest party pooper of our lives.
+					...
+					An iPod, a phone, an internet mobile communicator... these are NOT three separate devices! ...</p>
+				<div class="author-name">- Vignesh</div>
+			</blockquote>
+		</div>
+	</section>
+
+	<hr>
+	<section id="latest-blog" class="padding-large">
+		<div class="container">
+			<div class="section-header d-flex flex-wrap align-items-center justify-content-between">
+				<h2 class="section-title">our Journal</h2>
+				<div class="btn-wrap align-right">
+				</div>
+			</div>
+			<div class="row d-flex flex-wrap">
+				<article class="col-md-4 post-item">
+					<div class="image-holder zoom-effect">
+							<img src="images/electric.jpg" alt="post" class="post-image">
+						</a>
+					</div>
+					<div class="post-content d-flex">
+						<div class="meta-date">
+							<div class="meta-day text-primary">22</div>
+							<div class="meta-month">Aug-2021</div>
+						</div>
+						<div class="post-header">
+							<h3 class="post-title">
+								<a href="single-post.html">Casual look ideas to Buy to Your Home</a>
+							</h3>
+							<a href="blog.html" class="blog-categories">Fashion</a>
+						</div>
+					</div>
+				</article>
+				<article class="col-md-4 post-item">
+					<div class="image-holder zoom-effect">
+							<img src="images/home_app.png" alt="post" class="post-image">
+					
+					</div>
+					<div class="post-content d-flex">
+						<div class="meta-date">
+							<div class="meta-day text-primary">25</div>
+							<div class="meta-month">Aug-2021</div>
+						</div>
+						<div class="post-header">
+							<h3 class="post-title">
+								<a href="single-post.html">Latest trends of wearing street wears supremely</a>
+							</h3>
+							<a href="blog.html" class="blog-categories">Trending</a>
+						</div>
+					</div>
+				</article>
+				<article class="col-md-4 post-item">
+					<div class="image-holder zoom-effect">
+				<img src="images/home_appl.jpg" alt="post" class="post-image">
+					</div>
+					<div class="post-content d-flex">
+						<div class="meta-date">
+							<div class="meta-day text-primary">28</div>
+							<div class="meta-month">Aug-2021</div>
+						</div>
+						<div class="post-header">
+							<h3 class="post-title">
+								<a href="single-post.html">types of comfortable clothes ideas for women</a>
+							</h3>
+							<a href="blog.html" class="blog-categories">Inspiration</a>
+						</div>
+					</div>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<section id="brand-collection" class="padding-medium bg-light-grey">
+		<div class="container">
+			<div class="d-flex flex-wrap justify-content-between">
+				<img src="images/brand1.png" alt="phone" class="brand-image">
+				<img src="images/brand2.png" alt="phone" class="brand-image">
+				<img src="images/brand3.png" alt="phone" class="brand-image">
+				<img src="images/brand4.png" alt="phone" class="brand-image">
+				<img src="images/brand5.png" alt="phone" class="brand-image">
+			</div>
+		</div>
+	</section>
+
+	<section id="shipping-information">
+		<hr>
+		<div class="container">
+			<div class="row d-flex flex-wrap align-items-center justify-content-between">
+				<div class="col-md-3 col-sm-6">
+					<div class="icon-box">
+						<i class="icon icon-truck"></i>
+						<h4 class="block-title">
+							<strong>Free shipping</strong> Over $200
+						</h4>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<div class="icon-box">
+						<i class="icon icon-return"></i>
+						<h4 class="block-title">
+							<strong>Money back</strong> Return within 7 days
+						</h4>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<div class="icon-box">
+						<i class="icon icon-tags1"></i>
+						<h4 class="block-title">
+							<strong>Buy 4 get 5th</strong> 50% off
+						</h4>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<div class="icon-box">
+						<i class="icon icon-help_outline"></i>
+						<h4 class="block-title">
+							<strong>Any questions?</strong> experts are ready
+						</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+	</section>
+
+	<footer id="footer">
+		<div class="container">
+			<div class="footer-menu-list">
+				<div class="row d-flex flex-wrap justify-content-between">
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="footer-menu">
+							<h5 class="widget-title">Ultras</h5>
+							<ul class="menu-list list-unstyled">
+								<li class="menu-item">
+									<a href="about.html">About us</a>
+								</li>
+								<li class="menu-item">
+									<a href="#">Conditions </a>
+								</li>
+								<li class="menu-item">
+									<a href="blog.html">Our Journals</a>
+								</li>
+								<li class="menu-item">
+									<a href="#">Careers</a>
+								</li>
+								<li class="menu-item">
+									<a href="#">Affiliate Programme</a>
+								</li>
+								<li class="menu-item">
+									<a href="#">Ultras Press</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="footer-menu">
+							<h5 class="widget-title">Customer Service</h5>
+							<ul class="menu-list list-unstyled">
+								<li class="menu-item">
+									<a href="faqs.html">FAQ</a>
+								</li>
+								<li class="menu-item">
+									<a href="contact.html">Contact</a>
+								</li>
+								<li class="menu-item">
+									<a href="#">Privacy Policy</a>
+								</li>
+								<li class="menu-item">
+									<a href="#">Returns & Refunds</a>
+								</li>
+								<li class="menu-item">
+									<a href="#">Cookie Guidelines</a>
+								</li>
+								<li class="menu-item">
+									<a href="#">Delivery Information</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="footer-menu">
+							<h5 class="widget-title">Contact Us</h5>
+							<p>Do you have any questions or suggestions? <a href="#"
+									class="email">ourservices@ultras.com</a>
+							</p>
+							<p>Do you need assistance? Give us a call. <br>
+								<strong>+57 444 11 00 35</strong>
+							</p>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="footer-menu">
+							<h5 class="widget-title">Forever 2018</h5>
+							<p>Cras mattis sit ornare in metus eu amet adipiscing enim. Ullamcorper in orci, ultrices
+								integer eget arcu. Consectetur leo dignissim lacus, lacus sagittis dictumst.</p>
+							<div class="social-links">
+								<ul class="d-flex list-unstyled">
+									<li>
+										<a href="#">
+											<i class="icon icon-facebook"></i>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="icon icon-twitter"></i>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="icon icon-youtube-play"></i>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="icon icon-behance-square"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+	</footer>
+
+	<div id="footer-bottom">
+		<div class="container">
+			<div class="d-flex align-items-center flex-wrap justify-content-between">
+				<div class="copyright">
+					<p>Freebies by <a href="https://templatesjungle.com/">Templates Jungle</a> Distributed by <a
+							href="https://themewagon.com">ThemeWagon</a>
+					</p>
+				</div>
+				<div class="payment-method">
+					<p>Payment options :</p>
+					<div class="card-wrap">
+						<img src="images/visa-icon.jpg" alt="visa">
+						<img src="images/mastercard.png" alt="mastercard">
+						<img src="images/american-express.jpg" alt="american-express">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/jquery-1.11.0.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/script.js"></script>
+</body>
+
+</html>

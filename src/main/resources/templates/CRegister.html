@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th = "https://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title> Responsive Registration Form | CodingLab </title>
+    <link rel="stylesheet" href="Cregister.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Registration Page of Admin</div>
+    <div class="content">
+	<div th:if = "${session.message}">
+							<p class="alert alert-warning" th:text = "${session.message}"></p>
+						</div>
+      <form th:action = "@{/new-user}" th:object = "${adminDto}" method = "post">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">First Name</span>
+            <input type="text" th:field = "*{firstname}" placeholder="Enter first name">
+             <div class = "alert alert-danger" th:if = "${#fields.hasErrors('firstname')}" th:errors = "*{firstname}"></div>
+          </div>
+           <div class="input-box">
+            <span class="details">Last Name</span>
+            <input type="text" th:field = "*{lastname}" placeholder="Enter last name">
+             <div class = "alert alert-danger" th:if = "${#fields.hasErrors('lastname')}" th:errors = "*{lastname}"></div>
+          </div>
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" th:field = "*{username}" placeholder="Enter your username">
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" th:field = "*{password}" placeholder="Enter your password">
+            <div class = "alert alert-danger" th:if = "${#fields.hasErrors('password')}" th:errors = "*{password}"></div>
+          </div>
+          <div class="input-box">
+            <span class="details">Repeat Password</span>
+            <input type="password"  th:field = "*{repeatpassword}" placeholder="Confirm your password">
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+       <div class="signup-link">
+               Forgot Password <a th:href = "@{/forgot-pass}" href="#"> Forgot Password</a>
+            </div>
+        <div class="signup-link">
+              Have a Account ?  <a th:href = "@{/login}" href="#"> Login Now</a>
+            </div>
+      </form>
+    
+     
+    </div>
+  </div>
+
+</body>
+</html>

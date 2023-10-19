@@ -1,0 +1,168 @@
+<!Doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ecommerce Navbar Design</title>
+	<link rel="stylesheet" href="profile.css">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" th:src="@{/js/catupdate.js}"></script>
+	<!--	<script src="catupdate.js"></script>  -->
+
+
+</head>
+
+<body>
+	<div class="main-navbar shadow-sm sticky-top">
+		<div class="top-navbar">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-2 my-auto d-none d-sm-none d-md-block d-lg-block">
+						<h5 class="brand-name"> Vicky</h5>
+					</div>
+					<div class="col-md-5 my-auto">
+						<form role="search">
+							<div class="input-group">
+								<input type="search" placeholder="Search your product" class="form-control" />
+								<button class="btn bg-white" type="submit">
+									<i class="fa fa-search"></i>
+								</button>
+							</div>
+						</form>
+					</div>
+					<div class="col-md-5 my-auto">
+						<ul class="nav justify-content-end">
+
+							<li class="nav-item">
+								<a class="nav-link" th:href="@{/categories}" href="#">
+									<i class="fa fa-shopping-cart"></i> CATEGORY
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">
+									<i class="fa fa-heart"></i> Register
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">
+									<i class="fa fa-heart"></i> Login
+								</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+									data-bs-toggle="dropdown" aria-expanded="false">
+									<i class="fa fa-user"></i> Username
+								</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a></li>
+									<li><a class="dropdown-item" href="#"><i class="fa fa-list"></i> My Orders</a></li>
+									<li><a class="dropdown-item" href="#"><i class="fa fa-heart"></i> My Wishlist</a>
+									</li>
+									<li><a class="dropdown-item" href="#"><i class="fa fa-shopping-cart"></i> My
+											Cart</a></li>
+									<li><a class="dropdown-item" href="#"><i class="fa fa-sign-out"></i> Logout</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr><br>
+	<div th:if="${size == 0}">
+		<p>No category</p>
+	</div>
+	<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+		data-bs-whatever="@mdo">Open modal for @mdo</button>
+	<div th:if="${success}" class="text-center alert alert-success">
+		<p th:text="${success}"></p>
+	</div>
+	<div th:if="${failed}" class="text-center alert alert-danger">
+		<p th:text="${failed}"></p>
+	</div><br>
+	<table class="table table-bordered" th:if="${size > 0}">
+		<thead>
+			<hr>
+			<tr>
+				<th scope="col">Category Index</th>
+				<th scope="col">Category Name</th>
+				<th scope="col">Edit Category Name</th>
+				<th scope="col">Category Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="category : ${allCategories}">
+				<td th:text="${category.id}"></td>
+				<td th:text="${category.name}"></td>
+				<td>
+					<a id="editButton" th:href="@{/findById/(id = ${category.id})}" class="btn btn-primary"
+						data-bs-toggle="modal" data-bs-target="#editModal" data-bs-whatever="@mdo">Update</a>
+				</td>
+				<td>
+					<a th:if="${category.is_activated} == true" th:href="@{/delete-category/(id = ${category.id})}"
+						class="btn btn-warning">Delete</a>
+					<a th:if="${category.is_activated} == false" th:href="@{/enable-category/(id = ${category.id})}"
+						class="btn btn-primary">Enable</a>
+				</td>
+
+			</tr>
+		</tbody>
+	</table>
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<form th:action="@{/add-category}" method="post" th:object="${categoryNew}">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title fs-5" id="exampleModalLabel">New Caategory</h1>
+					</div>
+					<div class="modal-body">
+						<div class="mb-3">
+							<label for="recipient-name" class="col-form-label">Name</label>
+							<input type="text" class="form-control" th:field="*{name}" id="recipient-name">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary">Save</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalExample"
+		aria-hidden="true">
+		<form th:action="@{/update-category}" method="put">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Edit Category</h5>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="idEdit" class="col-form-label">Id:</label>
+							<input type="text" class="form-control" id="idEdit" name="id" readonly>
+						</div>
+						<div class="form-group">
+							<label for="nameEdit" class="col-form-label">Name:</label>
+							<input type="text" class="form-control" id="nameEdit" name="name">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary">Update</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+
+</html>

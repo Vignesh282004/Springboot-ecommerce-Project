@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+<title>Product Page</title>
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ecommerce Navbar Design</title>
+	<link rel="stylesheet" href="profile.css">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="main-navbar shadow-sm sticky-top">
+		<div class="top-navbar">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-2 my-auto d-none d-sm-none d-md-block d-lg-block">
+						<h5 class="brand-name"> Vicky</h5>
+					</div>
+					<div class="col-md-5 my-auto">
+					</div>
+				
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<br>
+	<table class="table">
+  <thead>
+    <tr>
+     					<th scope="col">Product Name</th>
+     					<th scope="col">Product Description</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Update</th>
+                        <th scope="col">Action</th>
+  </thead>
+  <tbody>
+    	    <tr th:each = "product : ${ss}">	
+                        <th scope="row" th:text = "${product.name}"></th>
+                      <td th:text = "${product.decription}"></td>
+                      <td th:text = "${product.costprice}"></td>
+                        <td th:text = "${product.currentQuantity}"></td>
+                        <td><img src="" style="height: 40px; width: 40px;" th:src = "*{'data:image/jpeg;base64,' + {product.image}}"></td>
+                        <td><a th:href="@{/update-product/{id} (id = ${product.id})}" class="btn btn-primary">Update</a></td>
+                       <td>
+                            <a th:if = "${product.is_activated == false	}" th:href="@{/enable-product/{id} (id = ${product.id})}" class="btn btn-warning">Enable</a>
+                            <a th:if = "${product.is_deleted == false}" th:href = "@{/delete-product/{id} (id = ${product.id})}" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+  </tbody>
+</table>
+</body>
+</html>
