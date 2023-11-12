@@ -17,10 +17,7 @@ import com.project.project.CustomerConfig.CustomerservConfig;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-	
-	  @Configuration
-	    @Order(2)
-	    public static class App2ConfigurationAdapter {
+
 	    	
 	    	@Bean
 	    	protected BCryptPasswordEncoder passwordEncoder()
@@ -66,7 +63,7 @@ public class SecurityConfig {
 	        return http.build();
 	    }
 	    }
-}
+
 	  
 
 
