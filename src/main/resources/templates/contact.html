@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
   <head>
     <title>Ultras - Clothing Store eCommerce Store HTML Website Template</title>
     <meta charset="utf-8">
@@ -18,8 +18,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- script
-    ================================================== -->
+
+	 <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- script  ================================================== -->
     <script src="js/modernizr.js"></script>
   </head>
   <body>
@@ -36,7 +44,7 @@
           <div class="container">
             <div class="row d-flex align-items-center">
               <div class="col-md-4 shipping-purchase text-center">
-                <p>Free shipping on a purchase value of $200</p>
+                <p>Contact Form</p>
               </div>
               <div class="col-md-4 col-sm-12 user-items">
                 <ul class="d-flex justify-content-end list-unstyled">
@@ -45,16 +53,7 @@
                       <i class="icon icon-user"></i>
                     </a>
                   </li>
-                  <li>
-                    <a href="cart.html">
-                      <i class="icon icon-shopping-cart"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="wishlist.html">
-                      <i class="icon icon-heart"></i>
-                    </a>
-                  </li>
+                
                   <li class="user-items search-item pe-3">
                     <a href="#" class="search-button">
                       <i class="icon icon-search"></i>
@@ -70,9 +69,9 @@
             <div class="row d-flex align-items-center">
               <div class="col-lg-2 col-md-2">
                 <div class="main-logo">
-                  <a href="index.html">
-                    <img src="images/main-logo.png" alt="logo">
-                  </a>
+            	
+                    <img src="images/leaf.png" alt="logo">
+               
                 </div>
               </div>
               <div class="col-lg-10 col-md-10">
@@ -80,55 +79,7 @@
 
                   <div id="main-nav" class="stellarnav d-flex justify-content-end right">
                     <ul class="menu-list">
-
-                      <li class="menu-item has-sub">
-                        <a href="index.html" class="item-anchor d-flex align-item-center" data-effect="Home">Home<i class="icon icon-chevron-down"></i></a>
-                        <ul class="submenu">
-                          <li><a href="index.html" class="item-anchor">Home</a></li>
-                          <li><a href="home2.html" class="item-anchor">Home v2<span class="text-primary"> (PRO)</span></a></li>
-                        </ul>
-                      </li>
-
-                      <li><a href="about.html" class="item-anchor" data-effect="About">About</a></li>
-
-                      <li class="menu-item has-sub">
-                        <a href="shop.html" class="item-anchor d-flex align-item-center" data-effect="Shop">Shop<i class="icon icon-chevron-down"></i></a>
-                        <ul class="submenu">
-                          <li><a href="shop.html" class="item-anchor">Shop</a></li>
-                          <li><a href="shop-slider.html" class="item-anchor">Shop slider<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="shop-grid.html" class="item-anchor">Shop grid<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="shop-list.html" class="item-anchor">Shop list<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="single-product.html" class="item-anchor">Single product<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="cart.html" class="item-anchor">Cart<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="wishlist.html" class="item-anchor">Wishlist<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="checkout.html" class="item-anchor">Checkout<span class="text-primary"> (PRO)</span></a></li>
-                        </ul>
-                      </li>
-
-                      <li class="menu-item has-sub">
-                        <a href="#" class="item-anchor d-flex align-item-center" data-effect="Pages">Pages<i class="icon icon-chevron-down"></i></a>
-                        <ul class="submenu">
-                          <li><a href="coming-soon.html" class="item-anchor">Coming soon<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="login.html" class="item-anchor">Login<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="faqs.html" class="item-anchor">FAQs<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="styles.html" class="item-anchor">Styles</a></li>
-                          <li><a href="thank-you.html" class="item-anchor">Thankyou</a></li>
-                          <li><a href="error.html" class="item-anchor">Error page<span class="text-primary"> (PRO)</span></a></li>
-                        </ul>
-                      </li>
-
-                      <li class="menu-item has-sub">
-                        <a href="blog.html" class="item-anchor d-flex align-item-center" data-effect="Blog">Blog<i class="icon icon-chevron-down"></i></a>
-                        <ul class="submenu">
-                          <li><a href="blog.html" class="item-anchor">Blog</a></li>
-                          <li><a href="blog-sidebar.html" class="item-anchor">Blog with sidebar<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="blog-masonry.html" class="item-anchor">Blog masonry<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="single-post.html" class="item-anchor">Single post</a></li>
-                        </ul>
-                      </li>
-
-                      <li><a href="contact.html" class="item-anchor active" data-effect="Contact">Contact</a></li>
-
+						   <li><a href="" th:href="@{/logout}" class="item-anchor active" data-effect="Contact">Logout</a></li>
                     </ul>
                   </div>
 
@@ -138,28 +89,12 @@
           </div>
         </nav>
       </div>
-    </header>
-
-    <section class="site-banner jarallax padding-large" style="background: url(images/hero-image.jpg) no-repeat; background-position: top;">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h1 class="page-title">Contact us</h1>
-            <div class="breadcrumbs">
-              <span class="item">
-                <a href="index.html">Home /</a>
-              </span>
-              <span class="item">Contact us</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+</header>
 
     <section class="contact-information padding-large">
       <div class="container">
         <div class="row">
-          <div ass="col-md-6">
+          <div class="col-md-6">
             <div class="section-header">
               <h2 class="section-title">Get in touch</h2>
             </div>
@@ -171,10 +106,10 @@
                     <a href="#"><i class="icon icon-phone"></i>+1650-243-0000</a>
                   </li>
                   <li>
-                    <a href="mailto:info@yourcompany.com"><i class="icon icon-mail"></i>info@yourcompany.com</a>
+                    <a href="mailto:kvignesh282004@gmail.com"><i class="icon icon-mail"></i>kvignesh282004@gmail.com</a>
                   </li>
                   <li>
-                    <a href="#"><i class="icon icon-map-pin"></i>North Melbourne VIC 3051, Australia</a>
+                    <a href="#"><i class="icon icon-map-pin"></i>South Zone,India</a>
                   </li>
                 </ul>
               </div>
@@ -189,9 +124,69 @@
               </div>
             </div>
           </div>
-        </div>
+          </div>
       </div>
     </section>
+    <div class="content">
+     <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          
+
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+              
+              <h3 class="heading mb-4">Email Feature</h3>
+              <p>Send Emails  From Here To Anyone ....</p>
+
+              <p><img src="images/undraw-contact.svg" alt="Image" class="img-fluid"></p>
+
+
+            </div>
+            <div class="col-md-6">
+              <div th:if="${message}">
+				  <h2 th:text = "${message}"></h2>
+			  </div> 
+              <form class="mb-5" th:action = "@{/contactform}"  method="post" id="contactForm" name="contactForm" th:object = "${contact}">
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Your name">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" name="email" id="email" placeholder="Your Email">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <textarea class="form-control" name="message" id="message" cols="30" rows="5" placeholder="Write your message"></textarea>
+                  </div>
+                </div>  
+                <div class="row">
+                  <div class="col-12">
+                    <input type="submit" value="Send Mail" class="btn btn-primary rounded-0 py-2 px-4">
+                  <span class="submitting"></span>
+                  </div>
+                </div>
+              </form>
+
+              <div id="form-message-warning mt-4"></div> 
+              <div id="form-message-success">
+                Your message was sent, thank you!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 <!--
     <section class="google-map">
       <div class="mapouter">
