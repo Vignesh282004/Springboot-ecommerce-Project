@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "https://www.thymeleaf.org/">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Yinka Enoch Adedokun">
+	<meta name="description" content="Simple Forgot Password Page Using HTML and CSS">
+	<meta name="keywords" content="forgot password page, basic html and css">
+	<title>Forgot Password Page - HTML + CSS</title>
+	 <link rel="stylesheet" href="Cforgot-password.css">
+</head>
+<body>
+	<div class="row">
+		<div th:if="${failed}" class="text-center alert alert-danger">
+		<p th:text="${failed}"></p>
+	</div>
+		<form method="post" th:action = "@{/otp-check}">
+		<div class="form-group">	
+			<input type="text" name="otp" id="otp" placeholder="Enter Your Otp" required="required">
+			<p><label for="otp">OTP</label></p>
+			<button onclick="showSpinner()">Verify OTP</button>
+		</div>
+		</form>
+		</div>
+</body>
+
+
+
+
+</html>
